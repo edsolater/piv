@@ -64,7 +64,10 @@ export function useKitProps<Props extends ValidProps, Status extends ValidStatus
   const mergedProps = pipe(
     props,
     (props) =>
-      mergePluginReturnedProps({ plugin: options?.plugin ? sortPlugin(options.plugin) : options?.plugin, props }), // defined-time
+      mergePluginReturnedProps({
+        plugin: options?.plugin ? sortPluginByPriority(options.plugin) : options?.plugin,
+        props
+      }), // defined-time
     (props) => mergeProps(options?.defaultProps ?? {}, props, { className: options?.name }), // defined-time
     handleShadowProps, // outside-props-run-time
     handlePluginProps // outside-props-run-time
@@ -72,7 +75,7 @@ export function useKitProps<Props extends ValidProps, Status extends ValidStatus
   return [mergedProps /* <-- FIX THIS TYPE */, mergedProps]
 }
 
-function sortPlugin(deepPluginList: MayDeepArray<Plugin<any>>) {
+function sortPluginByPriority(deepPluginList: MayDeepArray<Plugin<any>>) {
   const plugins = flapDeep(deepPluginList)
   if (plugins.length <= 1) return plugins
   if (plugins.every((p) => !p.priority)) return plugins
