@@ -2,7 +2,7 @@ import { flapDeep, omit } from '@edsolater/fnkit'
 import { createComponent, JSX, JSXElement } from 'solid-js'
 import { pipe } from '../../fnkit/dist'
 import { PivProps } from './types/piv'
-import { parsePivPropsToCoreProps } from './utils/parseDivPropsToCoreProps'
+import { parsePivPropsToCoreProps } from './utils/parsePivPropsToCoreProps'
 import { handlePluginProps } from './utils/plugin'
 import { handleShadowProps } from './utils/shallowProps'
 
