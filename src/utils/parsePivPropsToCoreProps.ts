@@ -2,7 +2,7 @@ import { flapDeep, merge, shakeFalsy, shakeNil } from '@edsolater/fnkit'
 import { JSX } from 'solid-js/jsx-runtime'
 import { PivProps } from '../types/piv'
 import { classname } from './classname'
-import { parseCSS } from './icss'
+import { parseCSSToString } from './icss'
 import { mergeRefs } from './mergeProps'
 
 export function parsePivPropsToCoreProps(
@@ -13,7 +13,7 @@ export function parsePivPropsToCoreProps(
   return {
     ...(pivProps.htmlProps && Object.assign({}, ...shakeNil(flapDeep(pivProps.htmlProps)))),
     class:
-      shakeFalsy([classname(pivProps.class), parseCSS(pivProps.icss)]).join(' ') ||
+      shakeFalsy([classname(pivProps.class), parseCSSToString(pivProps.icss)]).join(' ') ||
       undefined /* don't render if empty string */,
     ref: (el) => el && mergeRefs(...flapDeep(pivProps.ref))(el),
     style: pivProps.style ? merge(...shakeNil(flapDeep(pivProps.style))) : undefined,

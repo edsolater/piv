@@ -6,7 +6,7 @@ import { PivPlugin } from './plugin'
 
 export interface PivProps<TagName extends keyof HTMLElementTagNameMap = 'div'> {
   /** @example
-   * const Button = () => <Piv as={ (parsedPivProps) => <button {...parsedPivProps} /> } />
+   * const Button = () => <Piv as={(parsedPivProps) => <button {...parsedPivProps} />} />
    */
   as?: (props: object) => JSX.Element // assume a function return ReactNode is a Component
 
@@ -26,7 +26,7 @@ export interface PivProps<TagName extends keyof HTMLElementTagNameMap = 'div'> {
   children?: JSXElement
 
   /** special: every kit baseon <Piv> should support this prop */
-  shadowProps?: MayArray<PivProps<TagName>>
+  shadowProps?: MayArray<Partial<PivProps<any>>>
 
   /** special: every kit baseon <Piv> should support this prop */
   plugin?: MayArray<PivPlugin<any>>
