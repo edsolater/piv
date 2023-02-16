@@ -3,7 +3,7 @@ import { css, CSSObject } from '@emotion/css'
 
 export type ICSSObject = CSSObject // rename  for ICSSObject may be a superset of CSSObject
 
-export type ICSS = MayArray<ICSSObject | boolean | string | number | null | undefined | (() => ICSSObject)>
+export type ICSS = MayArray<ICSSObject | boolean | string | number | null | undefined>
 
 export function parseCSS(cssProp: ICSS) {
   const cssObjList = filter(flapDeep(cssProp), isObject)
