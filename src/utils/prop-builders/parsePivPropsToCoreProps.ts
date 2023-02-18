@@ -6,6 +6,7 @@ import { handlePluginProps } from '../prop-handlers/plugin'
 import { handleShadowProps } from '../prop-handlers/shallowProps'
 import { mergeRefs } from './mergeRefs'
 
+// TODO: change props:icss will make all props to re-calc, this may cause performance issue
 export function parsePivPropsToCoreProps(rawProps: PivProps<any>) {
   const props = pipe(rawProps as Partial<PivProps>, handleShadowProps, handlePluginProps)
   return {
