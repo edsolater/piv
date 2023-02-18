@@ -1,9 +1,7 @@
-import { flapDeep, omit, pipe } from '@edsolater/fnkit'
+import { flapDeep, omit } from '@edsolater/fnkit'
 import { createComponent, JSX, JSXElement } from 'solid-js'
 import { PivProps } from './types/piv'
 import { parsePivPropsToCoreProps } from './utils/prop-builders/parsePivPropsToCoreProps'
-import { handlePluginProps } from './utils/prop-handlers/plugin'
-import { handleShadowProps } from './utils/prop-handlers/shallowProps'
 
 export const Piv = <TagName extends keyof HTMLElementTagNameMap = 'div'>(props: PivProps<TagName>) => {
   // const props = pipe(rawProps as Partial<PivProps>, handleShadowProps, handlePluginProps)

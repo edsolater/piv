@@ -1,13 +1,13 @@
 lockfileVersion: 5.4
 
 specifiers:
-  '@edsolater/fnkit': ^0.1.10
+  '@edsolater/fnkit': ^0.1.11
   '@emotion/css': ^11.10.5
   solid-js: ^1.6.10
   typescript: ^4.9.5
 
 dependencies:
-  '@edsolater/fnkit': 0.1.10
+  '@edsolater/fnkit': 0.1.11
   '@emotion/css': 11.10.5
   solid-js: 1.6.10
 
@@ -79,8 +79,8 @@ packages:
       to-fast-properties: 2.0.0
     dev: false
 
-  /@edsolater/fnkit/0.1.10:
-    resolution: {integrity: sha512-VFzjuwNU78//YJMAqqITeSiYgYC4SYKycIlAXjg8Ius13BvtBCwwB6AM+joYRTHZSDutuVmOav4F+TMHpRxDxw==}
+  /@edsolater/fnkit/0.1.11:
+    resolution: {integrity: sha512-JH5I00NoerzZF0g27GIt8c0t4D53L+dHKKCt7tXMFLuDwUgjh9N0Dgv9TLzBJcTiM9Y23102HB1pUD+2lTZwkA==}
     dev: false
 
   /@emotion/babel-plugin/11.10.5:
