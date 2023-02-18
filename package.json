@@ -1,6 +1,6 @@
 {
   "name": "@edsolater/piv",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "",
   "main": "./src/index.ts",
   "type": "module",
@@ -8,10 +8,6 @@
   "scripts": {
     "type-check": "tsc --noEmit"
   },
-  "files": [
-    "src", 
-    "tsconfig.ts"
-  ],
   "license": "MIT",
   "devDependencies": {
     "typescript": "^4.9.5"
