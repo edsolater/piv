@@ -2,8 +2,8 @@ import { MayDeepArray, pipe, flapDeep } from '@edsolater/fnkit'
 import { mergeProps } from 'solid-js'
 import { CRef, PivProps } from './types/piv'
 import { ExtendsProps, ValidProps, ValidStatus } from './types/tools'
-import { GetPluginProps, handlePluginProps, mergePluginReturnedProps, Plugin } from './utils/plugin'
-import { handleShadowProps } from './utils/shallowProps'
+import { GetPluginProps, handlePluginProps, mergePluginReturnedProps, Plugin } from './utils/prop-handlers/plugin'
+import { handleShadowProps } from './utils/prop-handlers/shallowProps'
 
 /**
  * - auto add `plugin` `shadowProps` `_promisePropsConfig` `controller` props

@@ -9,8 +9,8 @@ import {
   shakeNil,
   mergeFunction
 } from '@edsolater/fnkit'
-import { CRef } from '../types/piv'
-import { ValidProps } from '../types/tools'
+import { ValidProps } from '../../types/tools'
+import { mergeRefs } from './mergeRefs'
 
 export function mergeProps<P1 = ValidProps, P2 = ValidProps>(...propsObjs: [P1, P2]): Exclude<P1 & P2, undefined>
 export function mergeProps<P1 = ValidProps, P2 = ValidProps, P3 = ValidProps>(
@@ -31,7 +31,7 @@ export function mergeProps<P extends ValidProps | undefined>(...propsObjs: P[]):
   if (trimedProps.length <= 1) return trimedProps[0] ?? {}
 
   const mergedResult = mergeObjectsWithConfigs(trimedProps, ({ key, valueA: v1, valueB: v2 }) => {
-    return parallelSwitch<string, any>(
+    return parallelSwitch(
       key,
       [
         // special div props
@@ -57,10 +57,4 @@ export function mergeProps<P extends ValidProps | undefined>(...propsObjs: P[]):
   })
   // @ts-ignore
   return mergedResult
-}
-
-export function mergeRefs<T = any>(...refs: (CRef<T> | null | undefined)[]): CRef<T> {
-  return ((el) => {
-    refs.filter(Boolean).forEach((ref) => ref?.(el))
-  }) as CRef<T>
 }

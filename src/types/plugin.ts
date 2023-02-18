@@ -10,3 +10,5 @@ export type PivPlugin<T> = {
   getProps?: (props: T & PivProps) => Partial<Omit<PivProps, 'plugin' | 'shadowProps'>>
   priority?: number // NOTE -1:  it should be calculated after final prop has determine
 }
+
+export type PivShadowProps<OriginalProps> = Partial<Omit<OriginalProps, 'as'>>
