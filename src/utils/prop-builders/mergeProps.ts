@@ -50,7 +50,7 @@ export function mergeProps<P extends ValidProps | undefined>(...propsObjs: P[]):
         // normal props
         [() => isFunction(v1) && isFunction(v2) && v1 !== v2, () => mergeFunction(v1 as AnyFn, v2 as AnyFn)],
         [() => isArray(v1) && isArray(v2) && v1 !== v2, () => (v1 as any[]).concat(v2)],
-        [() => isObject(v1) && isObject(v2) && v1 !== v2, () => mergeProps(v1, v2)] // if v1 and v2 are react node, it will be a disaster
+        [() => isObject(v1) && isObject(v2) && v1 !== v2, () => mergeProps(v1, v2)] // if v1 and v2 are react node, it will be a disaster // TODO: fix this
       ],
       v2 ?? v1
     )

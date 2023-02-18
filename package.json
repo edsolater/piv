@@ -1,15 +1,16 @@
 {
   "name": "@edsolater/piv",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "",
-  "main": "src/index.ts",
+  "main": "./src/index.ts",
   "type": "module",
   "sideEffects": false,
   "scripts": {
     "type-check": "tsc --noEmit"
   },
   "files": [
-    "src"
+    "src", 
+    "tsconfig.ts"
   ],
   "license": "MIT",
   "devDependencies": {
@@ -17,7 +18,7 @@
   },
   "dependencies": {
     "@edsolater/fnkit": "^0.1.11",
-    "@emotion/css": "^11.10.5",
+    "@emotion/css": "^11.10.6",
     "solid-js": "^1.6.10"
   }
 }
